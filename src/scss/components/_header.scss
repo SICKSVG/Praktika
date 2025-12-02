@@ -1,1 +1,108 @@
-// ваш код
+
+.header {
+    background: #ffffff;
+    height: 70px;
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+  &__signin{
+    background: #ffffff;
+    color: #0E0637;
+    border: 1px solid #D6D1FA;
+    padding: 11px 24px;
+    margin-left: 8px;
+    border-radius: 10px;
+    transition: all 0.2s;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
+  &__getstarted{
+    background: #ffffff;
+    color: #5235E8;
+    border: 1px solid #D6D1FA;
+    padding: 11px 24px;
+    margin-left: 8px;
+    border-radius: 10px;
+    transition: all 0.2s;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
+  &__signin:hover {
+    transform: translateY(2px);
+}
+  &__getstarted:hover {
+    transform: translateY(2px);
+}
+  &__buttons{
+    align-self: flex-start;
+  }
+  &__logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: #000;
+    flex-grow: 1;
+  }
+  &__list {
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  &__link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.2s;
+    &:hover {
+      color: #5235E8;
+    }
+  }
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 1;
+
+    @include small-tablet {
+      position: fixed;
+      top: 70px;
+      right: -100%;
+      width: 80%;
+      max-width: 300px;
+      height: calc(100vh - 70px);
+      background: #fff;
+      transition: right 0.4s ease;
+      box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+      &.menu--active {
+        right: 0;
+      }
+
+      .header__list {
+        flex-direction: column;
+        padding: 2rem 1rem;
+        align-self: flex-start;
+      }
+
+    }
+  }
+
+  .burger {
+    @include burger;
+    display: none;
+
+    @include small-tablet {
+      display: block;
+    }
+  }
+
+}
